@@ -9,10 +9,17 @@ class Counter extends React.Component {
         };
         setInterval(this._increaseValue, 1000);
     }
+    _reportMyId = () => {
+        this.props.doClick(this.props.id)
+    }
     render() {
         return (
-            <div className='counter'>
+            <div 
+            className='counter'
+            onClick={() => {this.props.doClick(this.props.id)}}
+            >
             {this.state.currentValue}
+            {this.props.id}
             </div>
         );
     }
@@ -25,6 +32,7 @@ class Counter extends React.Component {
             currentValue: newCurrentValue
         });
     }
+   
 }
 
 
