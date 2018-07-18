@@ -2,10 +2,16 @@ import React from 'react';
 
 
 class Counter extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state ={
+            currentValue: props.initialValue
+        };
+    }
     render() {
         return (
             <div className='counter'>
-            3
+            {this.state.currentValue}
             </div>
         )
     }
